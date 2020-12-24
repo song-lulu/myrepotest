@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/user" method="post">
+
+    <input  name="name" placeholder="请输入姓名"><br>
+    <input  name="age" placeholder="请输入年龄"><br>
+   <!-- <input  name="gender" placeholder="请输入性别">-->
+    <label for="nan">男<input name="gender" id="nan" value="男" type="radio"></label>
+    <label for="nv">女<input name="gender" id="nv" value="女" type="radio"></label>
+    <input name="birth" placeholder="请输入生日（格式：2020-11-20）"><br>
+    <input type="submit" value="添加">
+
+</form>
+</body>
+</html>

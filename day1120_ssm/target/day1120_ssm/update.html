@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/user" method="post">
+
+    <input type="hidden" name="_method" value="PUT">
+
+    <input type="hidden" name="id" th:value="${user.id}">
+    姓名：<input  name="name" th:value="${user.name}"><br>
+    年龄：<input  name="age" th:value="${user.age}"><br>
+    <!-- <input  name="gender" placeholder="请输入性别">-->
+
+    <div th:if="${user.gender=='男'||user.gender=='male'}">
+        <label for="nan">男<input name="gender" id="nan" value="男" type="radio" checked></label>
+        <label for="nv">女<input name="gender" id="nv" value="女" type="radio"></label>
+
+    </div>
+    <div th:if="${user.gender=='女'||user.gender=='female'}">
+        <label for="nan">男<input name="gender" id="nan" value="男" type="radio"></label>
+        <label for="nv">女<input name="gender" id="nv" value="女" type="radio"checked></label>
+    </div>
+
+
+    生日：<input name="birth" th:value="${#dates.format(user.birth,'yyyy-MM-dd')}"><br>
+    <input type="submit" value="修改">
+
+</form>
+</body>
+</html>

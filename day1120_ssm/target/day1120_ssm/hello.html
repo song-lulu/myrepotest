@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 th:text="${msg}">UserIndex</h1>
+<button onclick="window.location.href='/add.html'">
+新增用户
+</button>
+<table cellspacing="0" border="1">
+    <tr>
+        <th>编号</th>
+        <th>姓名</th>
+        <th>年龄</th>
+        <th>性别</th>
+        <th>生日</th>
+        <th>操作</th>
+    </tr>
+    <tr th:each="user:${users}">
+        <td th:text="${user.id}"></td>
+        <td th:text="${user.name}"></td>
+        <td th:text="${user.age}"></td>
+        <td th:text="${user.gender}"></td>
+        <td th:text="${#dates.format(user.birth,'yyyy-MM-dd')}"></td>
+        <td>
+
+            <form th:action="@{|/user/${user.id}|}" method="post">
+                <input type="hidden" name="_method" value="DELETE"/>
+                <input type="submit" value="删除">
+            </form>
+            <form th:action="@{|/user/${user.id}|}" method="get">
+                <input type="submit" value="编辑">
+            </form>
+        </td>
+    </tr>
+</table>
+
+
+</body>
+</html>

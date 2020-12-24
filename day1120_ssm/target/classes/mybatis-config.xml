@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+
+<configuration>
+
+
+
+    <!--配置mybatis自带日志-->
+    <settings>
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+
+        <setting name="lazyLoadingEnabled" value="true"/>
+        <!-- 每个属性按需要加载 -->
+        <setting name="aggressiveLazyLoading" value="false"/>
+        <!--开启二级缓存-->
+        <setting name="cacheEnabled" value="true"/>
+    </settings>
+
+
+
+
+
+
+</configuration>
